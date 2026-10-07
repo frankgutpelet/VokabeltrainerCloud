@@ -1,0 +1,219 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --green: #16a34a;
+  --red: #dc2626;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+#app {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+#konto {
+  margin-bottom: 1rem;
+}
+#konto .row {
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+h1 { font-size: 1.5rem; margin: 0; }
+
+nav button {
+  margin-left: 0.4rem;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button:hover { background: var(--primary-dark); }
+
+button.secondary {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover { background: #f0f0f0; }
+
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.row {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 0.6rem;
+  align-items: center;
+}
+
+.row input { flex: 1; }
+
+.vokabel-liste {
+  max-height: 260px;
+  overflow-y: auto;
+  margin-bottom: 0.75rem;
+}
+
+.lektion-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+  background: var(--card);
+}
+
+.gruppen-kopf {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.gruppen-kopf h3 { margin: 0; }
+.gruppen-kopf:first-child { margin-top: 0; }
+
+.lektion-item .name { font-weight: 600; }
+.lektion-item .aktionen button { margin-left: 0.4rem; }
+
+.frage-box {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.frage-box .wort {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+}
+
+.beispielsatz {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1rem;
+  margin: -0.8rem 0 1.2rem;
+}
+
+.vokabel-zeile {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.vokabel-zeile .row:last-child { margin-bottom: 0; }
+.vokabel-zeile .row:last-child input { font-size: 0.85rem; }
+
+.antwort-input {
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+}
+
+.feedback {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  min-height: 1.4rem;
+}
+
+.feedback.richtig { color: var(--green); }
+.feedback.falsch { color: var(--red); }
+
+.fortschritt {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.progressbar {
+  width: 100%;
+  height: 0.5rem;
+  background: var(--border);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 0.9rem;
+}
+.progressbar-fuellung {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: width 0.2s ease;
+}
+
+.zeitlimit {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--muted);
+}
+.zeitlimit.knapp { color: var(--red); font-weight: 600; }
+
+.ergebnis-note {
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+  margin: 1rem 0;
+}
+
+table.ergebnis-tabelle {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+table.ergebnis-tabelle th, table.ergebnis-tabelle td {
+  padding: 0.4rem 0.5rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.tag-richtig { color: var(--green); font-weight: 600; }
+.tag-falsch { color: var(--red); font-weight: 600; }
+
+.hinweis { color: var(--muted); font-size: 0.9rem; }
